@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "e900ebcc-c7d7-4f4d-9051-8b2a63421ad7",
+		"name": "User Management VertX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20647569"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"root\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login guest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"zelda\",\n    \"password\": \"qwerty\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read all users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJpZFwiOjEsXCJzdXJuYW1lXCI6XCJSb290XCIsXCJsYXN0bmFtZVwiOlwidGhlIEZpcnN0XCIsXCJ1c2VybmFtZVwiOlwicm9vdFwifSIsImlhdCI6MTY5ODMwNDYxNSwiZXhwIjozNDk4MzA0NjE1LCJyb2xlcyI6IkFkbWluaXN0cmF0b3IifQ.q50zXkZSfMnjzlJvhzXdPM4MRWZyiipjcku-aMnPeic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJpZFwiOjEsXCJzdXJuYW1lXCI6XCJSb290XCIsXCJsYXN0bmFtZVwiOlwidGhlIEZpcnN0XCIsXCJ1c2VybmFtZVwiOlwicm9vdFwifSIsImlhdCI6MTY5ODMwNDYxNSwiZXhwIjozNDk4MzA0NjE1LCJyb2xlcyI6IkFkbWluaXN0cmF0b3IifQ.q50zXkZSfMnjzlJvhzXdPM4MRWZyiipjcku-aMnPeic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"surname\": \"camilo\",\n    \"lastname\": \"Doe\",\n    \"username\": \"camilo\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJpZFwiOjYsXCJzdXJuYW1lXCI6XCJjYW1pbG9cIixcImxhc3RuYW1lXCI6XCJEb2VcIixcInVzZXJuYW1lXCI6XCJjYW1pbG9cIn0iLCJpYXQiOjE2OTgzMDczMzEsImV4cCI6MzQ5ODMwNzMzMSwicm9sZXMiOiJHdWVzdCJ9.rieiLpWf7HiqFRgSUa-EdELvJ8ZbHv1uatg3DyA2k8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"surname\": \"Zelda 2\",\n    \"lastname\": \"from Hell\",\n    \"username\": \"zelda\",\n    \"password\": \"qwerty\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJpZFwiOjUsXCJzdXJuYW1lXCI6XCJaZWxkYSAyXCIsXCJsYXN0bmFtZVwiOlwiZnJvbSBIZWxsXCIsXCJ1c2VybmFtZVwiOlwiemVsZGFcIn0iLCJpYXQiOjE2OTgzMDc0MjEsImV4cCI6MzQ5ODMwNzQyMSwicm9sZXMiOiJBZG1pbmlzdHJhdG9yIn0.H8Dr_BYf-5Prm5KfAD9sSqGJMg2HyozxhLs-j_-BL6c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

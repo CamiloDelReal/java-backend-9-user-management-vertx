@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+
+  mysqldb:
+    image: mysql:8.1.0-oracle
+    mem_limit: 800m
+    hostname: mysqldb
+    container_name: mysqldb
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: users_management
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - javabackend8
+
+networks:
+  javabackend8:

@@ -1,0 +1,17 @@
+{
+  "port": 3306,
+  "datasource": {
+    "host": "localhost",
+    "port": 3306,
+    "database": "users_management",
+    "user": "root",
+    "password": "root",
+    "poolSize": 5
+  },
+  "security": {
+    "jwtGeneration": {
+      "key": "123456",
+      "expiration": 1800000000
+    }
+  }
+}
